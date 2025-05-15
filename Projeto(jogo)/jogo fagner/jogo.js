@@ -2,10 +2,10 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const startButton = document.getElementById("start");
 
-// Canvas fica escondido antes de iniciar
+// canvas so aparece quando da Play
 canvas.style.display = "none";
 
-// Cria a nave como objeto
+// nave
 const nave = {
     x: 280,
     y: 500,
@@ -17,17 +17,17 @@ const nave = {
 
 nave.img.src = "nave.webp";
 
-// Sistema de mísseis
+// misseis
 const misseis = [];
 const velocidadeMissil = 7;
 
-// Sistema de asteroides
+// asteroides e pontuação
 const asteroides = [];
 const velocidadeAsteroide = 2;
 let pontuacao = 0;
 let gameOver = false;
 
-// Controles
+// controles
 const teclasPressionadas = {};
 let jogoRodando = false;
 
@@ -38,9 +38,9 @@ class Asteroide {
         this.altura = 30 + Math.random() * 30;
         this.x = Math.random() * (canvas.width - this.largura);
         this.y = -this.altura;
-        this.velocidadeY = 1 + Math.random() * velocidadeAsteroide;
+        this.velocidadeY = 1 + Math.random() * velocidadeAsteroide; //p fazer a velocidade ser aleatória
         this.img = new Image();
-        this.img.src = "asteroide.webp"; // Você precisa ter esta imagem
+        this.img.src = "asteroide.webp"; 
     }
 
     atualizar() {
@@ -57,11 +57,11 @@ class Asteroide {
     }
 }
 
-// Funções principais
+// funções principais
 function desenhar() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
-    // Desenha nave
+    // desenha nave
     if (nave.img.complete) {
         ctx.drawImage(nave.img, nave.x, nave.y, nave.largura, nave.altura);
     } else {
@@ -77,11 +77,12 @@ function desenhar() {
     ctx.font = "20px Arial";
     ctx.fillText(`Pontos: ${pontuacao}`, 10, 30);
     
-    // Mensagem de game over
+    // mensagem de game over
     if (gameOver) {
         ctx.fillStyle = "red";
+        ctx.strokestyle = "black"
         ctx.font = "40px Arial";
-        ctx.fillText("GAME OVER", canvas.width/2 - 100, canvas.height/2);
+        ctx.fillText("GAME OVER", canvas.width/2 - 100, canvas.height - 500);
     }
 }
 
@@ -94,11 +95,11 @@ function atualizar() {
     if (teclasPressionadas['a'] || teclasPressionadas['ArrowLeft']) nave.x -= nave.velocidade;
     if (teclasPressionadas['d'] || teclasPressionadas['ArrowRight']) nave.x += nave.velocidade;
     
-    // Limites da nave
+    // limites da nave
     nave.x = Math.max(0, Math.min(canvas.width - nave.largura, nave.x));
     nave.y = Math.max(0, Math.min(canvas.height - nave.altura, nave.y));
     
-    // Atualiza mísseis
+    // atualiza mísseis
     for (let i = misseis.length - 1; i >= 0; i--) {
         misseis[i].y -= velocidadeMissil;
         if (misseis[i].y < 0) {
@@ -106,16 +107,16 @@ function atualizar() {
         }
     }
     
-    // Atualiza asteroides
+    // atualiza
     for (let i = asteroides.length - 1; i >= 0; i--) {
         asteroides[i].atualizar();
         
-        // Verifica se asteroide saiu da tela
+        // se o asteroide sair do canvas gameover
         if (asteroides[i].y > canvas.height) {
-            asteroides.splice(i, 1);
+            // asteroides.splice(i, 1);
+            gameOver = true;
         }
-        
-        // Verifica colisão com nave
+        // se o asteroide bater na nave
         if (colisao(nave, asteroides[i])) {
             gameOver = true;
         }
@@ -176,6 +177,7 @@ function colisao(obj1, obj2) {
            obj1.y + obj1.altura > obj2.y;
 }
 
+
 // controles
 document.addEventListener('keydown', (event) => {
     const tecla = event.key.toLowerCase();
@@ -199,6 +201,8 @@ function gameLoop() {
     requestAnimationFrame(gameLoop);
 }
 
+
+//função que inicia
 function IniciaGame() {
     jogoRodando = true;
     gameOver = false;
@@ -212,9 +216,9 @@ function IniciaGame() {
     nave.x = 280;
     nave.y = 500;
     
-    // Inicia a geração de asteroides
-    setInterval(criarAsteroide, 1000);
-    
+    // inicia a geração de asteroides
+    setInterval(criarAsteroide, 300);
+    //se o botao der erro mas a nave iniciar o jogo inicia de qualquer maneira com o gameLoop
     if (nave.img.complete) {
         gameLoop();
     } else {
