@@ -32,7 +32,7 @@ let intervaloAsteroides = null;
 const teclasPressionadas = {};
 let jogoRodando = false;
 
-// Classe Asteroide
+// classe Asteroide
 class Asteroide {
     constructor() {
         this.largura = 30 + Math.random() * 30;
@@ -102,18 +102,18 @@ function desenhar() {
         desenharAsteroides();
     }
     
-    // Desenha pontuação (sempre visível)
+    // desenha pontuação (sempre visivel)
     ctx.fillStyle = "white";
     ctx.font = "20px Arial";
     ctx.fillText(`Pontos: ${pontuacao}`, 10, 30);
     
     // mensagem de game over
     if (gameOver) {
-        // Limpa o intervalo de asteroides
+        // limpa o intervalo de asteroides
         clearInterval(intervaloAsteroides);
         intervaloAsteroides = null;
         
-        // Mostra mensagem final
+        // mostra mensagem final
         ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         
@@ -127,12 +127,12 @@ function desenhar() {
         ctx.fillText(`Pontuação Final: ${pontuacao}`, canvas.width/2, canvas.height/2 + 20);
         ctx.textAlign = "left";
         
-        // Esconde o canvas e mostra o botão após um pequeno delay
+        // esconde o canvas e mostra o botão apos um delay
         setTimeout(() => {
             canvas.style.display = "none";
             startButton.style.display = "block";
             startButton.textContent = "Jogar Novamente";
-            jogoRodando = false; // Garante que o jogo pare completamente
+            jogoRodando = false; // garante que o jogo pare completamente
         }, 2000);
     }
 }
@@ -257,13 +257,13 @@ function gameLoop() {
 //função que inicia
 
 function IniciaGame() {
-    // Limpa qualquer intervalo existente antes de começar um novo jogo
+    // limpa os intervalos de antes
     if (intervaloAsteroides) {
         clearInterval(intervaloAsteroides);
         intervaloAsteroides = null;
     }
     
-    // Reseta o estado do jogo
+    // da reset no estado do jogo de antes
     jogoRodando = true;
     gameOver = false;
     pontuacao = 0;
@@ -272,14 +272,14 @@ function IniciaGame() {
     startButton.style.display = "none";
     canvas.style.display = "block";
     
-    // Posição inicial da nave
+    // posição inicial da nave
     nave.x = 280;
     nave.y = 500;
     
-    // Configuração do intervalo de asteroides (apenas um)
+    // intervalo na criação de asteroides (velocidade que eles aparecem)
     intervaloAsteroides = setInterval(criarAsteroide, 300);
     
-    // Inicia o loop do jogo
+    //inicia game
     gameLoop();
 }
 
