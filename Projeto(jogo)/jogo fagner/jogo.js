@@ -26,6 +26,7 @@ const asteroides = [];
 const velocidadeAsteroide = 2;
 let pontuacao = 0;
 let gameOver = false;
+let intervaloAsteroides = null;
 
 // controles
 const teclasPressionadas = {};
@@ -58,33 +59,84 @@ class Asteroide {
 }
 
 // funções principais
+// function desenhar() {
+//     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+//     // desenha nave
+//     if (nave.img.complete) {
+//         ctx.drawImage(nave.img, nave.x, nave.y, nave.largura, nave.altura);
+//     } else {
+//         ctx.fillStyle = "blue";
+//         ctx.fillRect(nave.x, nave.y, nave.largura, nave.altura);
+//     }
+    
+//     desenharMisseis();
+//     desenharAsteroides();
+    
+//     // Desenha pontuação
+//     ctx.fillStyle = "white";
+//     ctx.font = "20px Arial";
+//     ctx.fillText(`Pontos: ${pontuacao}`, 10, 30);
+    
+//     // mensagem de game over
+//     if (gameOver) {
+//         ctx.fillStyle = "red";
+//         ctx.strokestyle = "black"
+//         ctx.font = "40px Arial";
+//         ctx.fillText("GAME OVER", canvas.width/2 - 100, canvas.height - 500);
+//     }
+// }
 function desenhar() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
-    // desenha nave
-    if (nave.img.complete) {
-        ctx.drawImage(nave.img, nave.x, nave.y, nave.largura, nave.altura);
-    } else {
-        ctx.fillStyle = "blue";
-        ctx.fillRect(nave.x, nave.y, nave.largura, nave.altura);
+    if (!gameOver) {
+        // desenha nave
+        if (nave.img.complete) {
+            ctx.drawImage(nave.img, nave.x, nave.y, nave.largura, nave.altura);
+        } else {
+            ctx.fillStyle = "blue";
+            ctx.fillRect(nave.x, nave.y, nave.largura, nave.altura);
+        }
+        
+        desenharMisseis();
+        desenharAsteroides();
     }
     
-    desenharMisseis();
-    desenharAsteroides();
-    
-    // Desenha pontuação
+    // Desenha pontuação (sempre visível)
     ctx.fillStyle = "white";
     ctx.font = "20px Arial";
     ctx.fillText(`Pontos: ${pontuacao}`, 10, 30);
     
     // mensagem de game over
     if (gameOver) {
+        // Limpa o intervalo de asteroides
+        clearInterval(intervaloAsteroides);
+        intervaloAsteroides = null;
+        
+        // Mostra mensagem final
+        ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
         ctx.fillStyle = "red";
-        ctx.strokestyle = "black"
         ctx.font = "40px Arial";
-        ctx.fillText("GAME OVER", canvas.width/2 - 100, canvas.height - 500);
+        ctx.textAlign = "center";
+        ctx.fillText("GAME OVER", canvas.width/2, canvas.height/2 - 40);
+        
+        ctx.fillStyle = "white";
+        ctx.font = "30px Arial";
+        ctx.fillText(`Pontuação Final: ${pontuacao}`, canvas.width/2, canvas.height/2 + 20);
+        ctx.textAlign = "left";
+        
+        // Esconde o canvas e mostra o botão após um pequeno delay
+        setTimeout(() => {
+            canvas.style.display = "none";
+            startButton.style.display = "block";
+            startButton.textContent = "Jogar Novamente";
+            jogoRodando = false; // Garante que o jogo pare completamente
+        }, 2000);
     }
 }
+
 
 function atualizar() {
     if (!jogoRodando || gameOver) return;
@@ -203,7 +255,15 @@ function gameLoop() {
 
 
 //função que inicia
+
 function IniciaGame() {
+    // Limpa qualquer intervalo existente antes de começar um novo jogo
+    if (intervaloAsteroides) {
+        clearInterval(intervaloAsteroides);
+        intervaloAsteroides = null;
+    }
+    
+    // Reseta o estado do jogo
     jogoRodando = true;
     gameOver = false;
     pontuacao = 0;
@@ -212,16 +272,14 @@ function IniciaGame() {
     startButton.style.display = "none";
     canvas.style.display = "block";
     
-    // posicao q a nave nasce
+    // Posição inicial da nave
     nave.x = 280;
     nave.y = 500;
     
-    // inicia a geração de asteroides
-    setInterval(criarAsteroide, 300);
-    //se o botao der erro mas a nave iniciar o jogo inicia de qualquer maneira com o gameLoop
-    if (nave.img.complete) {
-        gameLoop();
-    } else {
-        nave.img.onload = gameLoop;
-    }
+    // Configuração do intervalo de asteroides (apenas um)
+    intervaloAsteroides = setInterval(criarAsteroide, 300);
+    
+    // Inicia o loop do jogo
+    gameLoop();
 }
+
