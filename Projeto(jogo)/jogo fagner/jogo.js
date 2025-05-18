@@ -114,7 +114,7 @@ function desenhar() {
         intervaloAsteroides = null;
         
         // mostra mensagem final
-        ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
+        ctx.fillStyle = "rgba(0, 0, 0, 0)";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         
         ctx.fillStyle = "red";
