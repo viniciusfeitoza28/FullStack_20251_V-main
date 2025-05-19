@@ -58,34 +58,7 @@ class Asteroide {
     }
 }
 
-// funções principais
-// function desenhar() {
-//     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-//     // desenha nave
-//     if (nave.img.complete) {
-//         ctx.drawImage(nave.img, nave.x, nave.y, nave.largura, nave.altura);
-//     } else {
-//         ctx.fillStyle = "blue";
-//         ctx.fillRect(nave.x, nave.y, nave.largura, nave.altura);
-//     }
-    
-//     desenharMisseis();
-//     desenharAsteroides();
-    
-//     // Desenha pontuação
-//     ctx.fillStyle = "white";
-//     ctx.font = "20px Arial";
-//     ctx.fillText(`Pontos: ${pontuacao}`, 10, 30);
-    
-//     // mensagem de game over
-//     if (gameOver) {
-//         ctx.fillStyle = "red";
-//         ctx.strokestyle = "black"
-//         ctx.font = "40px Arial";
-//         ctx.fillText("GAME OVER", canvas.width/2 - 100, canvas.height - 500);
-//     }
-// }
+//desenha a nave no canvas
 function desenhar() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
@@ -277,7 +250,7 @@ function IniciaGame() {
     nave.y = 500;
     
     // intervalo na criação de asteroides (velocidade que eles aparecem)
-    intervaloAsteroides = setInterval(criarAsteroide, 300);
+    intervaloAsteroides = setInterval(criarAsteroide, 250);
     
     //inicia game
     gameLoop();
