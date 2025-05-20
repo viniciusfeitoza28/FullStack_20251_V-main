@@ -1,0 +1,9 @@
+body{
+    background-color: aquamarine;
+}
+div{
+    background-color: burlywood;
+    padding: 10px;
+    margin: 10px;
+    display: inline;
+}

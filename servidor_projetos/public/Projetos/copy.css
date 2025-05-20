@@ -1,0 +1,92 @@
+body{
+    background-color: lightgray;
+}
+.links{
+    color:rgb(21, 176, 214);
+    position: fixed; 
+}
+a:hover{
+    color: white;
+}
+.div_1{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    background-color: bisque;
+    border: solid;
+}
+#txt1{
+    color: darkgreen;
+    padding-top: 10px;
+}
+.div_2{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    background-color: lightskyblue;
+    color: darkred;
+    height: 30px;
+}
+#p1{
+    margin-top: 5px;
+}
+.div_3{
+    display: flex;
+    justify-content: center;
+}
+.div_4{
+    display: flex;
+    justify-content: center; 
+    gap: 100px;
+}
+#txt2{
+    font-size: 20pt; 
+    text-align: center;
+    font-family: sans-serif;
+}
+
+table{
+    border: dashed;
+    color: red;
+}
+th{
+    border: 2px solid;
+    color: red;
+}
+td{
+    border: 2px solid;
+    color: red;
+}
+
+.div_5{
+    display: flex;
+    justify-content: center;
+    background-color: yellow;
+    flex-direction: column;
+    margin-left: 610px;
+    margin-top: 20px;
+    width: 30%;
+    align-items: center;
+    
+}
+#txt3{
+    color: black;
+    padding-right: 200px;
+}
+#a{
+    color: darkred;
+    padding-left: 100px;
+}
+.div_6{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    background-color: bisque;
+    margin: 20px;
+}
+#txt4{
+    font-style: italic;
+    font-size: 15pt;
+    padding-top: 10px;
+    margin-inline-start: 10px;
+}

@@ -1,0 +1,54 @@
+.dotted{
+    border: 5px dotted blue;
+}
+.dashed{
+    border:5px dashed red;
+}
+.solid{
+    border: 5px solid green;
+}
+.margin{
+    margin: 10px;
+}
+.radion_10{
+    border-radius: 10px;
+}
+.shadow{
+    box-shadow: 5px 5px gray;
+}
+.radion_20{
+    border-radius: 20px;
+}
+.padding{
+    padding: 10px;
+}
+.width_200{
+    width: 200px;
+}
+.display_inline{display: inline;}
+.display_block{display: block;}
+#div_1{
+    border: 2px solid black;
+    display: inline;
+    position: relative;
+    top: 100px;
+    left: 100px;
+    background-color:brown ;
+}
+#div_2{
+    border: 2px solid black;
+    display: inline;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background-color:brown ;
+}
+#contato{
+    background-color: greenyellow;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}
+#contato:hover{
+    background-color: aquamarine;
+}

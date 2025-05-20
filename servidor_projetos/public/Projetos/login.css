@@ -1,0 +1,25 @@
+
+a:hover{
+    color: white;
+}
+h1{
+    color: white;
+}
+body{
+    background-color: black;
+    color: white;
+ }
+ p{
+    color: white
+ }
+ .div{
+    display: flex;
+    justify-content: center;
+    padding-right:20px ;
+ }
+ .div1{
+    display: flex;
+    justify-content: center;
+    padding-right:50px ;
+    
+ }

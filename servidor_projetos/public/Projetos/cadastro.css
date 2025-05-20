@@ -1,0 +1,22 @@
+.div{
+    display: flex;
+    justify-content: center;
+    
+}
+
+body{
+   background-color: black;
+   color: white;
+}
+h1{
+    color: white;
+}
+.div1{
+    display: flex;
+    justify-content: center;
+    padding-right: 50px;
+}
+#form{
+    margin-top: 11px;
+    margin-left: 10px;
+}

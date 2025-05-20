@@ -1,0 +1,81 @@
+.div1{
+    background-color: blue;
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    justify-content: space-around;
+}
+.div2{
+    display: flex;
+    justify-content: center;
+    margin-right: 1100px;
+    padding-top: 20px;
+}
+#txt1{
+    color: rgb(66, 66, 247);
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left:10px ;
+    
+}
+#txt2{
+    font-family: Arial, Helvetica, sans-serif ;
+    padding-left: 10px;
+    text-align: left;
+}
+#txt3{
+    font-family: Arial, Helvetica, sans-serif;
+    color: orange;
+    padding-left: 10px;
+    
+}
+#txt4{
+    font-family: Arial, Helvetica, sans-serif;
+    color: green;
+    padding-right: 20px;
+}
+.div3{
+    display: flex;
+    justify-content: center;
+    background-color: lightgray;
+   justify-content: space-evenly;
+}
+#txt5{
+    background-color: orange;
+    color: white;
+    width: 300px;
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 10px;
+    height: 30px;
+}
+#p1{
+    text-align: left;
+}
+#txt6{
+    background-color: green;
+    color: white;
+    width: 300px;
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 10px;
+    height: 30px;
+}
+#ul1{
+    text-align: left;
+}
+#txt7{
+    background-color: green;
+    color: white;
+    width: 500px;
+}
+#txt8{
+    background-color: blue;
+    color: white;
+    width: 600px;
+}
+#p2{
+    text-align: left;
+}
+#p3{
+    text-align: right;
+}

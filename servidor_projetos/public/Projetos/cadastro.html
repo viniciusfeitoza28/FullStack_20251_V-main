@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+    <div class="div"><h1>Cadastro de Usuário</h1></div>
+
+    <div class="div1">
+        <form method="post" action="/cadastrar">
+            <p>Nome: <input type="text" name="Nome" required></p>
+            <p>User: <input type="text" name="User" required></p> <!-- Corrigido "User" -->
+            <p>Senha: <input type="password" name="Senha" required></p>
+            <br>
+            <button type="submit">Cadastrar</button> <!-- Adicionado botão para enviar cadastro -->
+        </form>
+    </div>
+
+    <div class="div">
+        <p>Já tem uma conta? Faça login:</p>
+        <form action="/login" method="get" id="form">
+            <input type="submit" value="Fazer login!">
+        </form>
+    </div>
+</body>
+</html>
+
+

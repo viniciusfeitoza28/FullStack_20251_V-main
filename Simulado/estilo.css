@@ -1,0 +1,64 @@
+.flex-container{
+    display: flex;
+    padding-top: 10px;
+    justify-content: center;
+    align-items: center;
+    
+}
+#txt1{
+    font-size: medium;
+    padding-inline-start: 10px;
+    margin-top: 5px;
+}
+.div1{
+    flex-direction: column;
+    background-color: purple;
+    color: white;
+    width: 120px;
+    height: 120px;
+    
+}
+.div2{
+   flex-direction: row-reverse;
+}
+.div3{
+    display: flex;
+    justify-content: center;
+    
+}
+.div4{
+    display: flex;
+    justify-content: center;
+    color: blue;
+}
+.div5{
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    gap: 50px;
+}
+#img1{
+    height: 190px;
+}
+.div6{
+    display: flex;
+    justify-content: center;
+}
+#img2{
+    margin-top: -50px;
+}
+#txt2{
+    margin-top: -10px;
+    margin-right: 80px;
+}
+.div7{
+    display: flex;
+    justify-content: center;
+    
+}
+.separator {
+    width: 1px; /* Largura da linha */
+    height: 20px; /* Altura da linha */
+    background-color: black; /* Cor da linha */
+    margin: 0 10px; /* Espaçamento entre os links */
+}

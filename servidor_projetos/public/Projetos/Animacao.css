@@ -1,0 +1,27 @@
+.a{
+    color: beige;
+    display: flex;
+    justify-content: start;
+}
+a:hover{
+    color: black;
+}
+#canvas{
+    border: solid black;
+    background-color: white;
+    
+}
+.div{
+    display: flex;
+    justify-content: center;
+    
+}
+body{
+    background-color: cornflowerblue;
+}
+.separator {
+    width: 1px; /* Largura da linha */
+    height: 20px; /* Altura da linha */
+    background-color: black; /* Cor da linha */
+    margin: 0 10px; /* Espaçamento entre os links */
+}

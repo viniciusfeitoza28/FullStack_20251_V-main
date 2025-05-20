@@ -1,0 +1,37 @@
+.a{
+    color:rgb(21, 176, 214);
+    display: flex;
+    justify-content: start;
+}
+a:hover{
+    color: black;
+} 
+#canvas{
+    border: solid black;
+    background-color: white;
+}
+#canvas2{
+    background-color: aquamarine;
+    align-items: center;
+}
+
+
+.div{
+    display: flex;
+    justify-content: center;
+}
+.separator {
+    width: 1px; /* Largura da linha */
+    height: 20px; /* Altura da linha */
+    background-color: black; /* Cor da linha */
+    margin: 0 10px; /* Espaçamento entre os links */
+}
+
+body{
+    background-color: aqua;
+}
+
+
+
+
+

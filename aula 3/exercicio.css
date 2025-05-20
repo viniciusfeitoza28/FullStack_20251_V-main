@@ -1,0 +1,52 @@
+.h2{
+    border: solid blue ;
+   color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px green;
+    width: 300px;
+    margin-bottom: 0px;
+   }
+.div_2{
+    background-color: black;
+    color: white;
+}
+li{
+    color: white;
+}
+.body{
+    background-color: black;
+}
+#h1{
+    background-color: brown;
+    margin-bottom: 20px;
+}
+.div_1{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    background-color: black;
+}
+    a{
+        color: white;
+    }
+    .div_3{
+        position: relative;
+        top: 8px;
+    }
+   
+    .table{
+        border-collapse: collapse;
+        width: 40%;
+        
+    }
+    th{
+        border: solid;
+
+    }
+    td{
+        border: solid;
+    }
+    div:hover{
+        color: aquamarine;
+    }

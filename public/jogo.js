@@ -250,7 +250,7 @@ function IniciaGame() {
     nave.y = 500;
     
     // intervalo na criação de asteroides (velocidade que eles aparecem)
-    intervaloAsteroides = setInterval(criarAsteroide, 300);
+    intervaloAsteroides = setInterval(criarAsteroide, 250);
     
     //inicia game
     gameLoop();

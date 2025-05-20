@@ -1,0 +1,32 @@
+body{
+    background-color: black;
+}
+a{
+    color:rgb(21, 176, 214);
+}
+a:hover{
+    color: white;
+}
+.div1{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+.div2{
+    display: flex;
+    justify-content: center;
+}
+input{
+    width: 200px;
+}
+.div3{
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+.txt{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-style: italic;
+}

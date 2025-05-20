@@ -1,0 +1,20 @@
+p{
+    color: orange;
+    font-size: larger;
+}
+
+#p1{
+    color: red;
+}
+
+.Tag_azul{
+    color: blue;
+}
+
+div p{
+    color: brown;
+}
+
+.Tag_azul:hover{
+    background-color: blueviolet;
+}
